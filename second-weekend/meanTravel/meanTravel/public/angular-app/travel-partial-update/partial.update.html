@@ -1,0 +1,45 @@
+<h1>Partial Update</h1>
+
+<form ng-hide="vm.message" name="vm.travelForm" ng-submit="vm.partialJob()">
+  <div class="form-group">
+    <label for="country">Country</label>
+    <input
+      type="country"
+      class="form-control"
+      id="country"
+      placeholder="country"
+      ng-model="vm.country"
+      autocapitalize="none"
+    />
+  </div>
+  <div class="form-group">
+    <label for="city">City</label>
+    <input
+      type="city"
+      class="form-control"
+      id="city"
+      placeholder="city"
+      ng-model="vm.city"
+      autocapitalize="none"
+    />
+  </div>
+  <div class="form-group">
+    <label for="popullation">Popullation</label>
+    <input
+      type="popullation"
+      class="form-control"
+      id="popullation"
+      placeholder="popullation"
+      ng-model="vm.popullation"
+      autocapitalize="none"
+    />
+  </div>
+  
+  <button type="submit" class="btn btn-success">Update Job</button>
+</form>
+<br />
+<form name="vm.travelForm" ng-submit="vm.delete()">
+  <a ng-href="#!/travel"
+    ><button type="Delete" class="btn-success">Back</button></a
+  >
+</form>

@@ -1,0 +1,35 @@
+<h1>
+    Information about Travel:
+    <p>{{vm.travel.country}} </p>
+</h1>
+<p>
+    Country : {{vm.travel.country}} <br/>
+    City : {{vm.travel.city}} <br/>
+    Popullation : {{vm.travel.popullation}} <br/>
+</p>
+
+<form name="vm.travelForm">
+    <a href="#!/travel/fullUpdate/{{vm.travelId}}"
+      ><button type="Put" class="btn-success">Complete Update</button></a
+    >
+  </form>
+  <br />
+  <form name="vm.travelForm">
+    <a href="#!/travel/partialUpdate/{{vm.travelId}}"
+      ><button type="Patch" class="btn-success">Partial Update</button></a
+    >
+  </form>
+  <br />
+  <form name="vm.jobTravel" ng-submit="vm.delete()">
+    <button type="Delete" class="btn-success">Delete Travel</button>
+  </form>
+  <br />
+  <form name="vm.jobTravel" ng-submit="vm.delete()">
+    <a ng-href="#!/"
+      ><button type="Back" class="btn-success">Back</button></a
+    >
+  </form>
+
+<!-- <form name="vm.travelForm" ng-submit="vm.delete()"> 
+    <button type="Delete" class="btn-success">Delete Travel</button> <br/>
+</form> -->

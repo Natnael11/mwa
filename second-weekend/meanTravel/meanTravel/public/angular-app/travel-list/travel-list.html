@@ -1,0 +1,19 @@
+<h1>{{vm.title}}</h1>
+<ul>
+    <li ng-repeat="travel in vm.travels">
+        <a ng-href="#!/travel/{{travel._id}}">{{travel.country}}</a>
+    </li>
+</ul>
+
+<!-- <form ng-show="{{vm.isLoggedIn()}}" name="vm.travelForm" ng-submit="vm.addTravel()">
+    <h3>To add a new place to travel please fill the form below:</h3> <br />
+    Country:
+    <input type="text" name="country" required ng-model="vm.newTravelCountry" style="color: black" /> <br />
+    City:
+    <input type="text" name="city" required ng-model="vm.newTravelCity" style="color: black" /> <br />
+    Popullation:
+    <input type="text" name="popullation" required ng-model="vm.newTravelPopullation" style="color: black" /> <br />
+    
+   
+    <button type="submit" class="btn-success">Add tRAVEL</button> <br/>
+</form> -->

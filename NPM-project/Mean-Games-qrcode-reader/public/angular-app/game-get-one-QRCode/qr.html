@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <video id="preview" width="100%"></video>
+    </div>
+    <div class="col-md-6">
+      <section>
+        <h1>
+          <h2><i>search game</i></h2>
+          <form class="searchform" name="vm.teamForm" ng-submit="vm.search()">
+            <i class="search">
+              <input
+                id="text"
+                ng-model="vm.id"
+                type="text"
+                name="text"
+                placeholder="'scan QRCode"
+                autocapitalize="none"
+                class="form-control"
+              />
+            </i>
+            <button type="submit" class="btn btn-success">Search Game</button>
+          </form>
+        </h1>
+      </section>
+    </div>
+  </div>
+</div>
+
+<br />
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Minimum Players</th>
+    <th>Maximum Players</th>
+    <th>Minimum Age</th>
+    <th>Rate</th>
+    <th>Publisher</th>
+  </tr>
+
+  <tr>
+    <td>{{vm.games.title}}</td>
+    <td>{{vm.games.price}}</td>
+    <td>{{vm.games.minPlayers}}</td>
+    <td>{{vm.games.maxPlayers}}</td>
+    <td>{{vm.games.minAge}}</td>
+    <td>{{vm.games.rate}}</td>
+    <td>{{vm.games.publisher}}</td>
+  </tr>
+</table>
+
+<script>
+  let scanner = new Instascan.Scanner({
+    video: document.getElementById("preview"),
+  });
+  Instascan.Camera.getCameras()
+    .then(function (cameras) {
+      if (cameras.length > 0) {
+        scanner.start(cameras[0]);
+      } else {
+        alert("No cameras found");
+      }
+    })
+    .catch(function (e) {
+      console.error(e);
+    });
+  scanner.addListener("scan", function (c) {
+    document.getElementById("text").value = c;
+  });
+</script>
